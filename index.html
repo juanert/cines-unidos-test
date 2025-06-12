@@ -42,7 +42,13 @@
     <header class="header">
       <div class="header__content">
         <div class="header__exclusive__content">
-          <p><strong>ESTRENO EXCLUSIVO &#x1F534</strong> Solo en cines unidos</p>
+          <p>
+            <strong id="exclusive"
+              >ESTRENO EXCLUSIVO
+              <!--&#x1F534-->
+            </strong>
+            Solo en cines unidos
+          </p>
         </div>
         <h2 class="header__title">
           <p class="first__word">DESTINO</p>
@@ -79,5 +85,301 @@
       </div>
     </header>
     <div class="division"></div>
+    <section class="billboard">
+      <div class="billboard__title">
+        <h2>En <span>Cartelera</span></h2>
+        <p>Descubre las mejores películas en nuestras salas premium</p>
+      </div>
+      <div class="billboard__categories">
+        <button>Cartelera</button>
+        <button>Preventa</button>
+        <button>Próximamente</button>
+      </div>
+      <div class="billboard__movies">
+        <div class="billboard__movies__movie">
+          <p class="category">En cines</p>
+          <img src="./images/final-destination.jpg" alt="Película 1" />
+          <div class="billboard__movies__movie__content">
+            <h3>Destino Final</h3>
+            <p>La muerte ataca de nuevo, más inevitable que nunca.</p>
+            <div class="billboard__movies__movie__info">
+              <div>
+                <img src="./images/star.svg" alt="" />
+                <p>4.8</p>
+              </div>
+              <p>143 min</p>
+            </div>
+            <button class="red-button">Comprar Boletos</button>
+          </div>
+        </div>
+        <div class="billboard__movies__movie">
+          <p class="category">En cines</p>
+          <img src="./images/dragon.webp" alt="Película 1" />
+          <div class="billboard__movies__movie__content">
+            <h3>Destino Final</h3>
+            <p>La muerte ataca de nuevo, más inevitable que nunca.</p>
+            <div class="billboard__movies__movie__info">
+              <div>
+                <img src="./images/star.svg" alt="" />
+                <p>4.8</p>
+              </div>
+              <p>143 min</p>
+            </div>
+            <button class="red-button">Comprar Boletos</button>
+          </div>
+        </div>
+        <div class="billboard__movies__movie">
+          <p class="category">En cines</p>
+          <img src="./images/kueka.jpg" alt="Película 1" />
+          <div class="billboard__movies__movie__content">
+            <h3>Destino Final</h3>
+            <p>La muerte ataca de nuevo, más inevitable que nunca.</p>
+            <div class="billboard__movies__movie__info">
+              <div>
+                <img src="./images/star.svg" alt="" />
+                <p>4.8</p>
+              </div>
+              <p>143 min</p>
+            </div>
+            <button class="red-button">Comprar Boletos</button>
+          </div>
+        </div>
+        <div class="billboard__movies__movie">
+          <p class="category">Proximamente</p>
+          <img
+            src="./images/ballet-to-bradway-poster-717x1024.jpg"
+            alt="Película 1"
+          />
+          <div class="billboard__movies__movie__content">
+            <h3>Destino Final</h3>
+            <p>La muerte ataca de nuevo, más inevitable que nunca.</p>
+            <div class="billboard__movies__movie__info">
+              <div>
+                <img src="./images/star.svg" alt="" />
+                <p>4.8</p>
+              </div>
+              <p>143 min</p>
+            </div>
+            <button class="red-button">Comprar Boletos</button>
+          </div>
+        </div>
+        <div class="billboard__movies__movie">
+          <p class="category">Preventa</p>
+          <img src="./images/stitch.webp" alt="Película 1" />
+          <div class="billboard__movies__movie__content">
+            <h3>Destino Final</h3>
+            <p>La muerte ataca de nuevo, más inevitable que nunca.</p>
+            <div class="billboard__movies__movie__info">
+              <div>
+                <img src="./images/star.svg" alt="" />
+                <p>4.8</p>
+              </div>
+              <p>143 min</p>
+            </div>
+            <button class="red-button">Comprar Boletos</button>
+          </div>
+        </div>
+        <div class="billboard__movies__movie">
+          <p class="category">Preventa</p>
+          <img src="./images//scarletWitch.jpg" alt="Película 1" />
+          <div class="billboard__movies__movie__content">
+            <h3>Destino Final</h3>
+            <p>La muerte ataca de nuevo, más inevitable que nunca.</p>
+            <div class="billboard__movies__movie__info">
+              <div>
+                <img src="./images/star.svg" alt="" />
+                <p>4.8</p>
+              </div>
+              <p>143 min</p>
+            </div>
+            <button class="red-button">Comprar Boletos</button>
+          </div>
+        </div>
+      </div>
+      <button class="red-button">Ver Toda la Cartelera</button>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        let barra = document.querySelector(".division");
+        let boton = document.querySelector(".red-outlined-button");
+        let header_content = document.querySelector(".header__content");
+        let header_image = document.querySelector(".header__image");
+        let header_image_img = document.querySelector(".header__image > img");
+        let exclusive = document.querySelector("#exclusive");
+        let billboard_title = document.querySelector(".billboard__title > h2");
+        let billboard = document.querySelector(".billboard");
+        let billboard_movies = document.querySelectorAll(
+          ".billboard__movies__movie"
+        );
+
+        //Register the GSAP plugin
+        gsap.registerPlugin(SplitText, ScrollTrigger);
+
+        let tlHeader = gsap.timeline({});
+        //Header
+        tlHeader.from(header_content, {
+          duration: 0.7,
+          ease: "power2.inOut",
+          y: -100,
+          opacity: 0,
+        });
+
+        tlHeader.fromTo(
+          header_content,
+          {
+            y: 0,
+            skewY: 0,
+          },
+          {
+            ease: "power2.inOut",
+            y: 75,
+            skewY: 5,
+            scrollTrigger: {
+              trigger: header_content,
+              start: "100% center",
+              end: "130% center",
+              scrub: true,
+              markers: true,
+            },
+          }
+        );
+
+        tlHeader.fromTo(
+          header_image,
+          {
+            y: 0,
+            skewY: 0,
+          },
+          {
+            ease: "power2.inOut",
+            y: 75,
+            skewY: -5,
+            scrollTrigger: {
+              trigger: header_image,
+              start: "100% center",
+              end: "130% center",
+              scrub: true,
+              markers: true,
+            },
+          }
+        );
+
+        gsap.from(header_image, {
+          duration: 0.7,
+          ease: "power2.inOut",
+          y: -100,
+          opacity: 0,
+        });
+
+        gsap.fromTo(
+          header_image_img,
+          {
+            outline: "none",
+          },
+          {
+            outline: "3px solid #ff4444ea",
+            duration: 3,
+            ease: "power2.inOut",
+            repeat: -1,
+            yoyo: true,
+          }
+        );
+
+        gsap.fromTo(
+          exclusive,
+          {
+            alpha: 0,
+            y: -50,
+          },
+          {
+            duration: 1,
+            ease: "sine.inOut",
+            alpha: 1,
+            y: 0,
+            delay: 0.5,
+            yoyo: true,
+            repeat: 2,
+          }
+        );
+
+        gsap.fromTo(
+          boton,
+          {
+            background: "none",
+          },
+          {
+            duration: 3,
+            ease: "sine.inOut",
+            background: "red",
+            yoyo: true,
+            repeat: 1,
+          }
+        );
+
+        gsap.from(barra, {
+          duration: 3,
+          alpha: 0,
+          ease: "bounce.out",
+          yoyo: true,
+          repeat: -1,
+        });
+
+        //Billboard
+        gsap.from(billboard, {
+          duration: 0.5,
+          ease: "power2.inOut",
+          y: 50,
+          opacity: 0,
+          scrollTrigger: {
+            trigger: billboard,
+            scrub: true,
+            start: "-15% center",
+            end: "5% 40%",
+            markers: false,
+          },
+        });
+
+        gsap.fromTo(
+          billboard,
+          {
+            backgroundSize: "100% 100%",
+          },
+          {
+            duration: 2.5,
+            ease: "power2.inOut",
+            backgroundSize: "120% 120%",
+            repeat: -1,
+            yoyo: true,
+          }
+        );
+
+        //randomly animate billboard movies
+        billboard_movies.forEach((movie, indes) => {
+          movie.style.order = Math.floor(Math.random() * 100);
+        });
+
+        tl = gsap.timeline({ repeat: -1, repeatDelay: 2 });
+        billboard_movies.forEach((movie, index) => {
+          tl.fromTo(
+            movie,
+            { outline: "none", y: 0 },
+            {
+              duration: 2,
+              y: -20,
+              outline: "4px solid #ff4444ea",
+              ease: "circ.out",
+              stagger: {
+                amount: 5,
+              },
+              yoyo: true,
+              repeat: 1,
+            }
+          );
+        });
+      });
+    </script>
   </body>
 </html>

@@ -2,6 +2,7 @@
   position: relative
   @include grid(false, 1, 10, center)
   background: url("./images/final-destination.jpg")
+  background-attachment: fixed
   background-size: cover
   background-position: center
   overflow: hidden
@@ -11,6 +12,7 @@
     position: absolute
     inset: 0
     background: radial-gradient(ellipse at right center,#27090b 0%,#121212e4 60%, #000000f8 100%)
+    background-attachment: fixed
     z-index: 1
     pointer-events: none
   > *
@@ -19,6 +21,7 @@
   @media screen and ( min-width: 768px )
     @include grid(false, 2, 10, center)
     background: url("./images/banner.jpg")
+    background-attachment: fixed
     background-size: cover
     background-position: center
   &__content
@@ -55,17 +58,26 @@
         @include flex(row, center, center, 10px)
         height: 40px
         padding: 0 20px
+        transition: all 0.3s ease-in-out
+        &:hover
+          transform: scale(1.05)
+          transition: transform 0.3s ease-in-out
   &__image
     display: none
     @media screen and ( min-width: 767px )
       @include flex(column, center, center)
     img
-      width: 100%
-      max-width: 380px
+      width: fit-content
+      max-width: 340px
       border-radius: 10px
       border: #ed2c2cc0 1px solid
+      @media screen and ( min-width: 992px )
+        width: 100%
+        max-width: 400px
+        height: auto
+        object-fit: cover
 .division
   width: 100%
   height: 8px
   background: linear-gradient(90deg,transparent 0%,#ff2323 40%,#ff4545 50%,#ff2323 60%,transparent 100%)
-    box-shadow: 0 0 16px 4px #ff4544aa
+  box-shadow: 0 0 16px 4px #ff4544aa
