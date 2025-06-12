@@ -477,7 +477,7 @@ nav .menu {
   grid-template-columns: repeat(1, 1fr);
   gap: 20px;
   align-items: center;
-  padding: 80px 60px;
+  padding: 80px 0px;
   min-height: 50vh;
 }
 @media screen and (min-width: 992px) {
@@ -486,9 +486,11 @@ nav .menu {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     align-items: center;
+    padding: 80px 60px;
   }
 }
 .premium__content {
+  padding: 0 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -518,14 +520,25 @@ nav .menu {
   justify-content: center;
   align-items: flex-start;
   gap: 20px;
-  padding: 15px 0;
+  padding: 15px;
 }
 .premium__content__chacteristics__item {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   gap: 20px;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .premium__content__chacteristics__item {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    text-align: left;
+  }
 }
 .premium__content__chacteristics__item > div {
   display: flex;
@@ -576,11 +589,17 @@ nav .menu {
 }
 .premium__cinema__seats {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 5px;
   align-items: center;
-  width: -moz-fit-content;
-  width: fit-content;
+}
+@media screen and (min-width: 768px) {
+  .premium__cinema__seats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    align-items: center;
+  }
 }
 .premium__cinema__seats__column {
   display: grid;
@@ -588,7 +607,12 @@ nav .menu {
   gap: 5px;
   align-items: center;
   justify-items: center;
-  padding: 40px 0;
+  padding: 20px 0;
+}
+@media screen and (min-width: 768px) {
+  .premium__cinema__seats__column {
+    padding: 30px 0;
+  }
 }
 .premium__cinema__seats__column > .red {
   background: #ED2C2C;
@@ -655,6 +679,7 @@ nav .menu {
 .features > h2 {
   font-size: 48px;
   font-weight: 700;
+  text-align: center;
 }
 .features > h2 > span {
   color: #ED2C2C;
@@ -680,9 +705,17 @@ nav .menu {
 }
 .features__content {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 40px;
   align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .features__content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    align-items: center;
+  }
 }
 .features__content__item {
   display: flex;
