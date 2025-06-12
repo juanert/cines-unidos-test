@@ -1,0 +1,94 @@
+.premium
+  @include grid(false, 1, 20px, center)
+  padding: 80px 60px
+  min-height: 50vh
+  @media screen and (min-width: 992px)
+    @include grid(false, 2, 20px, center)
+  &__content
+    @include flex(column, center, flex-start, 10px)
+    & > h4
+      color: $color-primario
+      font-weight: 600
+      font-size: 14px
+    & > h2
+      font-weight: 700
+      font-size: 48px
+      & > span
+        color: $color-primario
+    & > p
+      font-size: 20px
+      color: #A1A1AA
+      line-height: 1.625
+    &__chacteristics
+      @include flex(column, center, flex-start, 20px)
+      padding: 15px 0
+      &__item
+        @include flex(row, flex-start, center, 20px)
+        & > div
+          @include flex(column, center, flex-start, 5px)
+          & > h3
+            font-weight: 600
+            font-size: 16px
+          & > p
+            font-size: 14px
+            color: #A1A1AA
+        & > img
+          background: #3D1517
+          border-radius: 100%
+          padding: 10px
+          backdrop-filter: blur(10px)
+  &__cinema
+    background: linear-gradient(130deg, rgba(21, 17, 17, 0.863) 0%, rgba(255, 255, 255, 0.1) 100%)
+    @include flex(column, center, center, 5px)
+    border-radius: 20px
+    padding: 20px
+    &__screen
+      background: linear-gradient(90deg,transparent 0%,#ff2323 40%,#ff4545 50%,#ff2323 60%,transparent 100%)
+      width: 100%
+      height: 10px
+      border-radius: 10px
+      text-align: center
+      position: relative
+      & > p
+        text-align: center
+        color: #A1A1AA
+        font-size: 14px
+        font-weight: 600
+        padding: 10px 0
+    &__seats
+      @include grid(false, 3, 30px, center)
+      width: fit-content
+      &__column
+        @include grid(false, 3, 5px, center)
+        justify-items: center
+        padding: 40px 0
+        & > .red
+          background: $color-primario
+        & > div
+          width: 40px
+          height: 40px
+          border-radius: 15px
+          background: #a1a1aa50
+          backdrop-filter: blur(10px)
+          &:hover
+            background: $color-primario
+            cursor: pointer
+            box-shadow: 0 0 10px $color-primario
+    &__legend
+      @include flex(row, center, center, 40px)
+      &__title
+        @include flex(row, center, center, 10px)
+        & > .gray
+          background: #a1a1aa50
+          width: 20px
+          height: 20px
+          border-radius: 5px
+        & > .red
+          background: $color-primario
+          width: 20px
+          height: 20px
+          border-radius: 5px
+        & > p
+          font-size: 14px
+          font-weight: 400
+          color: #A1A1AA

@@ -1,0 +1,56 @@
+.features
+  @include flex(column, center, center, 20px)
+  min-height: 80vh
+  padding: 60px
+  background: url("./images/seats.jpg")
+  background-attachment: fixed
+  background-size: cover
+  background-position: center
+  position: relative
+  & > h2
+    font-size: 48px
+    font-weight: 700
+    & > span
+      color: $color-primario
+  & > p
+    font-size: 20px
+    font-weight: 400
+    color: #A1A1AA
+    text-align: center
+  &::before
+    content: ''
+    position: absolute
+    inset: 0
+    background: radial-gradient(ellipse at right center,#27090b 0%,#121212ef 60%, #000000 100%)
+    background-attachment: fixed
+    z-index: 1
+    pointer-events: none
+  > *
+    position: relative
+    z-index: 2
+  &__content
+    @include grid(false, 2, 40px, center)
+    &__item
+      @include flex(column, center, center, 20px)
+      background: #0F0F0F
+      padding: 20px
+      text-align: center
+      border-radius: 10px
+      border: 1px solid #1F1F1F
+      transition: all 0.3s ease-in-out
+      &:hover
+        transform: scale(1.05)
+        box-shadow: 0 4px 20px rgba(199, 17, 17, 0.148)
+        transition: all 0.3s ease-in-out
+      & > img
+        padding: 10px
+        border-radius: 100%
+        background: #3D1517
+        backdrop-filter: blur(10px)
+      & > h3
+        font-size: 20px
+        font-weight: 600
+      & > p
+        font-size: 16px
+        font-weight: 400
+        color: #A1A1AA
