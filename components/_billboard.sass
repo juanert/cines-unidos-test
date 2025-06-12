@@ -2,9 +2,13 @@
   @include flex(column, center, center, 40px)
   min-height: 100vh
   padding: 60px 0
-  background: radial-gradient(ellipse at right bottom,#27090b82 0%,#121212e4 60%, #000000f8 100%)
+  background: radial-gradient(ellipse at left top,#27090b82 0%,#121212e4 60%, #000000f8 100%)
   background-size: 200% 200%
   background-position: center
+  @media screen and (min-width: 768px)
+    background: radial-gradient(ellipse at right bottom,#27090b82 0%,#121212e4 60%, #000000f8 100%)
+    background-size: cover
+    background-position: center
   &__title
     @include flex(column, center, center, 10px)
     & h2

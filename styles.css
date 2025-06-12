@@ -280,9 +280,16 @@ nav .menu {
   gap: 40px;
   min-height: 100vh;
   padding: 60px 0;
-  background: radial-gradient(ellipse at right bottom, rgba(39, 9, 11, 0.5098039216) 0%, rgba(18, 18, 18, 0.8941176471) 60%, rgba(0, 0, 0, 0.9725490196) 100%);
+  background: radial-gradient(ellipse at left top, rgba(39, 9, 11, 0.5098039216) 0%, rgba(18, 18, 18, 0.8941176471) 60%, rgba(0, 0, 0, 0.9725490196) 100%);
   background-size: 200% 200%;
   background-position: center;
+}
+@media screen and (min-width: 768px) {
+  .billboard {
+    background: radial-gradient(ellipse at right bottom, rgba(39, 9, 11, 0.5098039216) 0%, rgba(18, 18, 18, 0.8941176471) 60%, rgba(0, 0, 0, 0.9725490196) 100%);
+    background-size: cover;
+    background-position: center;
+  }
 }
 .billboard__title {
   display: flex;
