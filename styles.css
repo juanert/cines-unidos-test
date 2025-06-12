@@ -142,7 +142,7 @@ nav .menu {
   background-position: center;
   overflow: hidden;
   min-height: 80vh;
-  padding: 60px 0;
+  padding: 70px 0;
 }
 .header::before {
   content: "";
