@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap')
+
+$color-primario: #ED2C2C
+$color-secundario: #FAFAFA
+$color-terciario: #767676
+$color-fondo: #0B0B0B
+
+*
+  padding: 0
+  margin: 0
+  font-family: "Inter", sans-serif
+  color: $color-secundario
+  letter-spacing: 0.5px
+  cursor: default
+
+body
+  background-color: $color-fondo
+
+a
+  text-decoration: none
+  color: $color-secundario
+  transition: all 0.3s ease-in-out
+  cursor: pointer
+  &:hover
+    color: $color-primario
+  &:visited
+    color: $color-secundario
+  &:active
+    color: $color-primario
+
+button
+  cursor: pointer
+  & > *
+    cursor: pointer
+
+.red-button
+  background-color: #ed2c2cc0
+  color: $color-secundario
+  border-radius: 5px
+  outline: none
+  border: none
+  &:hover
+    background-color: #ed2c2c
+    color: $color-secundario
+
+.red-outlined-button
+  background-color: transparent
+  color: #ed2c2c
+  border: 1px solid #ed2c2c
+  border-radius: 5px
+  outline: none
+  &:hover
+    background-color: #ed2c2cc0
+    color: $color-secundario

@@ -1,0 +1,45 @@
+nav
+  @include flex(row, space-between, center)
+  @include espaciado(15px 60px)
+  background-color: rgba(2, 2, 2, 0.4)
+  backdrop-filter: blur(5px)
+  -webkit-backdrop-filter: blur(5px)
+
+  .navbar__logo, div, .menu, .navbar__logo a
+    @include flex(row, center, center)
+
+  .navbar__logo
+    font-weight: 700
+    font-size: 20px
+    gap: 8px
+
+    a
+      gap: 5px
+      cursor: pointer
+
+      img
+        @include espaciado(5px)
+        background-color: $color-primario
+        border-radius: 50%
+
+  div
+    gap: 40px
+
+    p, .location
+      gap: 5px
+
+  .menu
+    cursor: pointer
+
+.responsive
+  display: none
+
+.desktop
+  @include flex(row, center, center, 20px)
+
+  @media screen and (min-width: 992px)
+    display: none
+
+@media screen and (min-width: 992px)
+  .responsive
+    display: flex

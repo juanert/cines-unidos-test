@@ -1,0 +1,71 @@
+.header
+  position: relative
+  @include grid(false, 1, 10, center)
+  background: url("./images/final-destination.jpg")
+  background-size: cover
+  background-position: center
+  overflow: hidden
+  min-height: 90vh
+  &::before
+    content: ''
+    position: absolute
+    inset: 0
+    background: radial-gradient(ellipse at right center,#27090b 0%,#121212e4 60%, #000000f8 100%)
+    z-index: 1
+    pointer-events: none
+  > *
+    position: relative
+    z-index: 2
+  @media screen and ( min-width: 768px )
+    @include grid(false, 2, 10, center)
+    background: url("./images/banner.jpg")
+    background-size: cover
+    background-position: center
+  &__content
+    @include flex(column, center, flex-start, 20px)
+    @include espaciado(60px)
+    .header__exclusive__content p
+      color: $color-terciario
+      strong
+        color: $color-primario
+    .header__title
+      font-size: 3.5rem
+      font-weight: 700
+      line-height: 1.25
+      .first__word
+        color: $color-primario
+    .header__subtitle
+      color: $color-terciario
+      font-size: 1.75rem
+    .header__description
+      color: $color-terciario
+      font-size: 1.2rem
+      line-height: 1.5
+    .header__information, .header__information div, .header__information p
+      @include flex(row, flex-start, center, 20px)
+      color: $color-terciario
+      .bg-red
+        background-color: #ed2c2cc0
+        color: $color-secundario
+        padding: 0 10px
+        border-radius: 5px
+    .header__buttons
+      @include flex(row, flex-start, center, 20px)
+      & button
+        @include flex(row, center, center, 10px)
+        height: 40px
+        padding: 0 20px
+  &__image
+    display: none
+    @media screen and ( min-width: 767px )
+      @include flex(column, center, center)
+    img
+      width: 100%
+      max-width: 380px
+      border-radius: 10px
+      border: #ed2c2cc0 1px solid
+.division
+  width: 100%
+  height: 8px
+  background: linear-gradient(90deg,transparent 0%,#ff2323 40%,#ff4545 50%,#ff2323 60%,transparent 100%)
+    box-shadow: 0 0 16px 4px #ff4544aa
