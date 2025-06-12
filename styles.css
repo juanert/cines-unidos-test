@@ -300,6 +300,7 @@ nav .menu {
 }
 .billboard__title p {
   color: #767676;
+  text-align: center;
 }
 .billboard__categories {
   display: flex;
@@ -325,10 +326,18 @@ nav .menu {
 }
 .billboard__movies {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 20px;
   align-items: center;
   padding: 0px 60px;
+}
+@media screen and (min-width: 600px) {
+  .billboard__movies {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    align-items: center;
+  }
 }
 @media screen and (min-width: 768px) {
   .billboard__movies {

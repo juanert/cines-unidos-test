@@ -15,6 +15,7 @@
       color: $color-primario
     & p
       color: $color-terciario
+      text-align: center
   &__categories
     @include flex(row, center, center, 10px)
     background-color: #18181B
@@ -30,8 +31,10 @@
       &:hover
         background: $color-primario
   &__movies
-    @include grid(false, 2, 20px, center)
+    @include grid(false, 1, 20px, center)
     padding: 0px 60px
+    @media screen and (min-width: 600px)
+      @include grid(false, 2, 20px, center)
     @media screen and (min-width: 768px)
       @include grid(false, 3, 20px, center)
     @media screen and (min-width: 1024px)
