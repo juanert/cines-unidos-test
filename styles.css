@@ -141,7 +141,8 @@ nav .menu {
   background-size: cover;
   background-position: center;
   overflow: hidden;
-  min-height: 90vh;
+  min-height: 80vh;
+  padding: 60px 0;
 }
 .header::before {
   content: "";
@@ -332,7 +333,7 @@ nav .menu {
   align-items: center;
   padding: 0px 60px;
 }
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 768px) {
   .billboard__movies {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -340,7 +341,7 @@ nav .menu {
     align-items: center;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
   .billboard__movies {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -348,7 +349,7 @@ nav .menu {
     align-items: center;
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1200px) {
   .billboard__movies {
     display: grid;
     grid-template-columns: repeat(6, 1fr);

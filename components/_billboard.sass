@@ -34,11 +34,11 @@
   &__movies
     @include grid(false, 1, 20px, center)
     padding: 0px 60px
-    @media screen and (min-width: 600px)
-      @include grid(false, 2, 20px, center)
     @media screen and (min-width: 768px)
+      @include grid(false, 2, 20px, center)
+    @media screen and (min-width: 992px)
       @include grid(false, 3, 20px, center)
-    @media screen and (min-width: 1024px)
+    @media screen and (min-width: 1200px)
       @include grid(false, 6, 20px, center)
     &__movie
       @include flex(column, center, flex-start)
