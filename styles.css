@@ -513,15 +513,23 @@ nav .menu {
   justify-content: center;
   align-items: flex-start;
   gap: 10px;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .premium__content {
+    text-align: left;
+  }
 }
 .premium__content > h4 {
   color: #ED2C2C;
   font-weight: 600;
   font-size: 14px;
+  width: 100%;
 }
 .premium__content > h2 {
   font-weight: 700;
   font-size: 48px;
+  width: 100%;
 }
 .premium__content > h2 > span {
   color: #ED2C2C;
@@ -933,4 +941,10 @@ nav .menu {
     align-items: center;
     gap: 12px;
   }
+}
+.footer__bottom > div a, .footer__bottom > div p {
+  color: #A1A1AA !important;
+}
+.footer__bottom > div a:hover {
+  color: #fff !important;
 }/*# sourceMappingURL=styles.css.map */
