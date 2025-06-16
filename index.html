@@ -362,7 +362,7 @@
             <div class="premium__cinema__seat"></div>
             <div class="premium__cinema__seat"></div>
             <div class="premium__cinema__seat"></div>
-            <div class="premium__cinema__seat red"></div>
+            <div class="premium__cinema__seat"></div>
             <div class="premium__cinema__seat"></div>
             <div class="premium__cinema__seat"></div>
             <div class="premium__cinema__seat"></div>
@@ -375,9 +375,9 @@
             <div class="premium__cinema__seat"></div>
             <div class="premium__cinema__seat"></div>
             <div class="premium__cinema__seat"></div>
-            <div class="premium__cinema__seat red"></div>
             <div class="premium__cinema__seat"></div>
-            <div class="premium__cinema__seat red"></div>
+            <div class="premium__cinema__seat"></div>
+            <div class="premium__cinema__seat"></div>
             <div class="premium__cinema__seat"></div>
           </div>
           <div class="premium__cinema__seats__column">
@@ -388,7 +388,7 @@
             <div class="premium__cinema__seat"></div>
             <div class="premium__cinema__seat"></div>
             <div class="premium__cinema__seat"></div>
-            <div class="premium__cinema__seat red"></div>
+            <div class="premium__cinema__seat"></div>
             <div class="premium__cinema__seat"></div>
           </div>
         </div>
@@ -454,6 +454,111 @@
         </div>
       </div>
     </section>
+    <section class="statistics">
+      <div class="statistics__content">
+        <h3>50+</h3>
+        <p>Salas Premium</p>
+      </div>
+      <div class="statistics__content">
+        <h3>25</h3>
+        <p>Ubicaciones</p>
+      </div>
+      <div class="statistics__content">
+        <h3>2M+</h3>
+        <p>Visitantes Anuales</p>
+      </div>
+      <div class="statistics__content">
+        <h3>15</h3>
+        <p>Años de Experiencia</p>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="footer__grid">
+        <div class="footer__grid__left">
+          <div class="footer__grid__left__logo">
+            <a href="./index.html" class="logo">
+              <img
+                draggable="false"
+                oncontextmenu="return false"
+                src="./images/film.svg"
+                alt=""
+              />
+              <span>CINES UNIDOS</span>
+            </a>
+          </div>
+          <p>
+            La experiencia cinematográfica más completa con tecnología de
+            vanguardia y el mejor entretenimiento para toda la familia.
+          </p>
+          <div class="footer__grid__left__social">
+            <a>
+              <img
+                draggable="false"
+                oncontextmenu="return false"
+                src="./images/facebook.svg"
+                alt=""
+              />
+            </a>
+            <a>
+              <img
+                draggable="false"
+                oncontextmenu="return false"
+                src="./images/instagram.svg"
+                alt=""
+              />
+            </a>
+            <a>
+              <img
+                draggable="false"
+                oncontextmenu="return false"
+                src="./images/twitter.svg"
+                alt=""
+              />
+            </a>
+          </div>
+        </div>
+        <div class="footer__grid__center">
+          <h3>Enlaces Rápidos</h3>
+          <a>Cartelera</a>
+          <a>Preventa</a>
+          <a>Promociones</a>
+          <a>Cines Unidos Club</a>
+          <a>Términos y Condiciones</a>
+        </div>
+        <div class="footer__grid__center">
+          <h3>Ubicaciones</h3>
+          <a>Centro Comercial A</a>
+          <a>Plaza B</a>
+          <a>Mall C</a>
+          <a>Centro D</a>
+          <a>Ver Todas</a>
+        </div>
+        <div class="footer__grid__right">
+          <h3>Contacto</h3>
+          <div>
+            <img src="./images/phone.svg" alt="" />
+            <p>Teléfono: +58 212 555-0123</p>
+          </div>
+          <div>
+            <img src="./images/mail.svg" alt="" />
+            <p>Email: info@cinesunidos.com</p>
+          </div>
+          <div>
+            <img src="./images/map-pin.svg" alt="" />
+            <p>Dirección: Av. Principal, Caracas, Venezuela</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div>
+          <p>© 2024 Cines Unidos. Todos los derechos reservados.</p>
+        </div>
+        <div>
+          <a>Política de Privacidad</a>
+          <a>Términos de Uso</a>
+        </div>
+      </div>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
@@ -465,11 +570,6 @@
         let header_image = document.querySelector(".header__image");
         let header_image_img = document.querySelector(".header__image > img");
         let exclusive = document.querySelector("#exclusive");
-        let billboard_title = document.querySelector(".billboard__title > h2");
-        let billboard = document.querySelector(".billboard");
-        let billboard_movies = document.querySelectorAll(
-          ".billboard__movies__movie"
-        );
 
         //Register the GSAP plugin
         gsap.registerPlugin(SplitText, ScrollTrigger);
@@ -575,7 +675,7 @@
           }
         );
 
-        gsap.from(barra, {
+        gsap.from(".division", {
           duration: 3,
           alpha: 0,
           ease: "bounce.out",
@@ -584,13 +684,13 @@
         });
 
         //Billboard
-        gsap.from(billboard, {
+        gsap.from(".billboard", {
           duration: 0.5,
           ease: "power2.inOut",
           y: 50,
           opacity: 0,
           scrollTrigger: {
-            trigger: billboard,
+            trigger: ".billboard",
             scrub: true,
             start: "-15% center",
             end: "5% 40%",
@@ -599,7 +699,7 @@
         });
 
         gsap.fromTo(
-          billboard,
+          ".billboard__title > h2",
           {
             backgroundSize: "100% 100%",
             backgroundPosition: "0% 0%",
@@ -614,29 +714,100 @@
           }
         );
 
-        //randomly animate billboard movies
-        billboard_movies.forEach((movie, indes) => {
-          movie.style.order = Math.floor(Math.random() * 100);
+        gsap.fromTo(
+          ".billboard__movies__movie",
+          { outline: "none", y: 0 },
+          {
+            duration: 2.5,
+            y: -20,
+            outline: "4px solid #ff4444ea",
+            ease: "circ.out",
+            repeat: -1,
+            stagger: {
+              each: 5,
+              from: "random",
+              repeat: 1,
+              yoyo: true,
+            },
+          }
+        );
+
+        //Premium Section
+        gsap.from(".premium__content", {
+          duration: 0.7,
+          ease: "power2.inOut",
+          x: -50,
+          opacity: 0,
+          scrollTrigger: {
+            trigger: ".premium",
+            start: "-100px center",
+            end: "100px 40%",
+            scrub: true,
+            markers: false,
+          },
         });
 
-        tl = gsap.timeline({ repeat: -1, repeatDelay: 2 });
-        billboard_movies.forEach((movie, index) => {
-          tl.fromTo(
-            movie,
-            { outline: "none", y: 0 },
-            {
-              duration: 2,
-              y: -20,
-              outline: "4px solid #ff4444ea",
-              ease: "circ.out",
-              stagger: {
-                amount: 5,
-              },
-              yoyo: true,
-              repeat: 1,
-            }
-          );
+        gsap.from(".premium__cinema", {
+          duration: 0.7,
+          ease: "power2.inOut",
+          x: 50,
+          opacity: 0,
+          scrollTrigger: {
+            trigger: ".premium",
+            start: "-100px center",
+            end: "100px 40%",
+            scrub: true,
+            markers: false,
+          },
         });
+
+        gsap.fromTo(
+          ".premium__cinema__seat",
+          {
+            backgroundColor: "#464547",
+          },
+          {
+            duration: 2,
+            ease: "power2.inOut",
+            backgroundColor: "#ED2C2C",
+            repeat: -1,
+            stagger: {
+              each: 2,
+              from: "random",
+              delay: 2,
+            },
+          }
+        );
+
+        //Features Section
+        gsap.from(".features__content__item", {
+          y: 50,
+          opacity: 0,
+          scrollTrigger: {
+            trigger: ".features",
+            start: "-100px center",
+            end: "100px 30%",
+            scrub: true,
+            easing: "power2.inOut",
+            markers: false,
+          },
+        });
+
+        gsap.fromTo(
+          ".statistics",
+          {
+            backgroundPosition: "0% 0%",
+            backgroundSize: "100% 100%",
+          },
+          {
+            duration: 2.5,
+            ease: "power2.inOut",
+            backgroundPosition: "100% 100%",
+            backgroundSize: "200% 200%",
+            repeat: -1,
+            yoyo: true,
+          }
+        );
       });
     </script>
   </body>

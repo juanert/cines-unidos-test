@@ -22,7 +22,7 @@ body
   -webkit-user-drag: none
   user-drag: none
 
-a
+a, a img
   text-decoration: none
   color: $color-secundario
   transition: all 0.3s ease-in-out
@@ -65,3 +65,16 @@ button
 
 p
   line-height: 1.625
+
+.responsive
+  display: none!important
+
+.desktop
+  @include flex(row, center, center, 20px)
+
+  @media screen and (min-width: 992px)
+    display: none
+
+@media screen and (min-width: 992px)
+  .responsive
+    display: flex!important

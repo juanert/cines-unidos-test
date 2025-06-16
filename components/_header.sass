@@ -12,10 +12,12 @@
     content: ''
     position: absolute
     inset: 0
-    background: radial-gradient(ellipse at right center,#27090b 0%,#121212e4 60%, #000000f8 100%)
-    background-attachment: fixed
     z-index: 1
     pointer-events: none
+    background-attachment: fixed
+    background: radial-gradient(ellipse at right center,#27090b 0%,#121212e4 60%, #000000f8 100%)
+    background-size: 100% 100%
+    animation: background-animation 8s ease-in-out infinite
   > *
     position: relative
     z-index: 2
@@ -82,3 +84,14 @@
   height: 8px
   background: linear-gradient(90deg,transparent 0%,#ff2323 40%,#ff4545 50%,#ff2323 60%,transparent 100%)
   box-shadow: 0 0 16px 4px #ff4544aa
+
+@keyframes background-animation
+  0%
+    background-size: 100% 100%
+    background-position: center
+  50%
+    background-size: 200% 200%
+    background-position: 0 0
+  100%
+    background-size: 100% 100%
+  background-position: center

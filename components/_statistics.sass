@@ -1,0 +1,17 @@
+.statistics
+  @include grid(false, 2, 30px, center)
+  padding: 60px 40px
+  @media screen and ( min-width: 768px )
+    @include grid(false, 4, 30px, center)
+    padding: 60px 80px
+    background-image: radial-gradient(ellipse at right bottom ,#0e0d0def 20%, #000000 80%)
+  &__content
+    @include flex(column, center, center, 10px)
+    & > h3
+      font-size: 36px
+      font-weight: 700
+      text-align: center
+      color: $color-primario
+    & > p
+      font-size: 16px
+      color: #A1A1AA
